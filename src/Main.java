@@ -11,7 +11,9 @@ public class Main {
 //        Car car = new Car();
 //        Teacher teacher = new Teacher(21,"Brian");
 //        teacher.whatIsAge();
-        Dog dog = new Dog("buddy", "Golden");
-        dog.Display();
+//        Dog dog = new Dog("buddy", "Golden");
+//        dog.Display();
+
+
     }
     }

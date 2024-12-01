@@ -4,7 +4,6 @@ public class Car {
     public Car(){
 
     }
-
     public Car(String modelName, int modelYear) {
         model = modelName;
         year = modelYear;
