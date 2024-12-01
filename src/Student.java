@@ -1,5 +1,6 @@
-public class Student {
 
+// this here for checking static and non-static connection
+public class Student {
     static int a = 5;
     int num = 1;
     public Student() {
