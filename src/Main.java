@@ -18,6 +18,11 @@ public class Main {
 //        Dog dog = new Dog("buddy", "Golden");
 //        dog.Display();
         //experiment on constructor chain via extend
-        Source s = new Source();
+//        Source s = new Source();
     }
     }
+    //when constructor is private, you can't extend and can't make instance of it outside
+//2 use of private constructor are:
+//1. We use private constructor when we want to prevent other classes from creating an object of a class.
+//2. We can use it in single tone classes where the object of the class cannot be created outside the class.
+
