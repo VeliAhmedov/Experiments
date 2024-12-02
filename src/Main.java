@@ -1,4 +1,5 @@
 import constructorChain.Source;
+import staticExamples.StExp;
 
 import java.util.*;
 public class Main {
@@ -19,6 +20,14 @@ public class Main {
 //        dog.Display();
         //experiment on constructor chain via extend
 //        Source s = new Source();
+
+        //this ere checks how many times object ofc lass created via increment inside no-argument constructor
+//        StExp stExp = new StExp();
+//        stExp.display();
+//        StExp stExp2 = new StExp();
+//        stExp2.display();
+//        StExp stExp3 = new StExp();
+//        stExp3.display();
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
