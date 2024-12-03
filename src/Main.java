@@ -1,4 +1,5 @@
 import constructorChain.Source;
+import executionOrder.ExeOrder;
 import staticExamples.StExp;
 
 import java.util.*;
@@ -28,6 +29,17 @@ public class Main {
 //        stExp2.display();
 //        StExp stExp3 = new StExp();
 //        stExp3.display();
+
+        //adding value via constructor and calling method in car class
+//        Car car = new Car("BMW", 2004);
+//        Car.fueling(car);
+
+        //this is experiment  on execution order as for block (static or not), variables (same), methods (same)
+        // constructor (all 3 type) and main method which is static
+        System.out.println("Main method starts");
+        ExeOrder exeOrder = new ExeOrder();
+        ExeOrder exeOrder1 = new ExeOrder(300);
+        System.out.println("Main method ends");
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
