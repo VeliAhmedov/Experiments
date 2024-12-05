@@ -1,5 +1,6 @@
 import constructorChain.Source;
 import executionOrder.ExeOrder;
+import modifierExamples.AccessModifier;
 import staticExamples.StExp;
 
 import java.util.*;
@@ -36,10 +37,24 @@ public class Main {
 
         //this is experiment  on execution order as for block (static or not), variables (same), methods (same)
         // constructor (all 3 type) and main method which is static
-        System.out.println("Main method starts");
-        ExeOrder exeOrder = new ExeOrder();
-        ExeOrder exeOrder1 = new ExeOrder(300);
-        System.out.println("Main method ends");
+//        System.out.println("Main method starts");
+//        ExeOrder exeOrder = new ExeOrder();
+//        ExeOrder exeOrder1 = new ExeOrder(300);
+//        System.out.println("Main method ends");
+
+        // you can assign values even in final reference.
+        // final means that you can assign to new object
+//        final List<Integer> list = new ArrayList<Integer>();
+//        list.add(20);
+//        list.add(30);
+//        list.add(40);
+//        System.out.println("Elements in the list");
+//        System.out.println(list);
+
+        //testing modifiers
+//        AccessModifier accessModifier = new AccessModifier();
+//        accessModifier.access = 1;
+
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
