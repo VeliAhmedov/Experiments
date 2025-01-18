@@ -10,11 +10,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         //checking static and non-static
-        /*
-        Student.studying();
-        Student student = new Student();
-        student.learning();
-         */
+
+//        Student.studying();
+//        Student student = new Student();
+//        student.learning();
 
         //this here checking method value connection
         /*
@@ -94,6 +93,14 @@ public class Main {
         AnonymousOuterClass a = new AnonymousOuterClass();
         a.aoco.MethodThatWillBeOverridden();
          */
+
+        //Simple calculation
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter x and y");
+//        int x = sc.nextInt();
+//        int y = sc.nextInt();
+//        Calculation.calculationSum(x,y);
+
 
     }
     }
