@@ -9,3 +9,4 @@ public class Protein {
         System.out.println("Hair, Skin, Eyes, Muscles, and organs are all made up of Protein");
     }
 }
+

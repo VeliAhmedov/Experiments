@@ -8,4 +8,6 @@ public class Calculation {
         int result = x+y;
         System.out.println("sum of those 2 is " + result);
     }
+
+
 }

@@ -26,6 +26,11 @@ public class Car {
     public static void fueling(Car car){
         System.out.println("fueling " + car.model +" that is made " + car.year);
     }
+    /* you can do this like that
+    public static void fueling(String model, int year){
+        System.out.println("fueling " + model +" that is made " + year);
+    }
+     */
     //this way you can assign parameter to instance variable.
     //you can create object but that is diference
     //in main method Car car = new Car("Toyota", 2020); // Existing Car instance

@@ -1,3 +1,4 @@
+import Encapsulation.EncaspClass;
 import constructorChain.Source;
 import executionOrder.ExeOrder;
 import innerClass.AnonymousOuterClass;
@@ -101,7 +102,16 @@ public class Main {
 //        int y = sc.nextInt();
 //        Calculation.calculationSum(x,y);
 
-
+        //encapsulation example for encaps class
+        /*
+        EncaspClass encaspClass = new EncaspClass();
+        encaspClass.setStdName("Kiran");
+        encaspClass.setStdRollNo(4);
+        encaspClass.setStdId(12334L);
+        System.out.println("student name is " + encaspClass.getStdName());
+        System.out.println("student roll no is " + encaspClass.getStdRollNo());
+        System.out.println("student id is " + encaspClass.getStdId());
+         */
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
