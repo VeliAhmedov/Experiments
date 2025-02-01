@@ -1,13 +1,8 @@
-import Encapsulation.EncaspClass;
-import constructorChain.Source;
-import executionOrder.ExeOrder;
-import innerClass.AnonymousOuterClass;
-import innerClass.BankSecurity;
-import innerClass.OuterClass;
-import modifierExamples.AccessModifier;
-import staticExamples.StExp;
+import inheritance.hasARelationShip.Aggregation.Address;
+import inheritance.hasARelationShip.Aggregation.Student;
+import inheritance.hasARelationShip.Composition.Car;
+import inheritance.hasARelationShip.Composition.Engine;
 
-import java.util.*;
 public class Main {
     public static void main(String[] args) {
         //checking static and non-static
@@ -111,6 +106,77 @@ public class Main {
         System.out.println("student name is " + encaspClass.getStdName());
         System.out.println("student roll no is " + encaspClass.getStdRollNo());
         System.out.println("student id is " + encaspClass.getStdId());
+         */
+        //how inhertance works
+        /*
+        SubClass subClass = new SubClass();
+        subClass.features();
+        subClass.ownFeature();
+         */
+        //when assigned to reference of superclass, depending on which class is assigned, it gives answer for that
+        /*
+        Animal animal;
+        animal = new Rabbit();
+        animal.makeSound();
+        animal = new Parrot();
+        animal.makeSound();
+         */
+        //when assigned to class reference animal even if assigned via rabbit can't use rabbit's methods. this is upcasting
+        /*
+        Animal animal = new Rabbit();
+        animal.makeSound();
+        animal.eat();
+        // animal.munch   this here is wrong
+        // but rabbit can do both its and animal's
+        Rabbit rabbit = new Rabbit();
+        rabbit.makeSound();
+        rabbit.munch();
+        rabbit.eat();
+         */
+        //to show inheritance between sub and super class
+        /*
+        M2 m2 = new M2("Toyota", "Corolla");
+        M3 m3 = new M3("Schwinn");
+        m2.drive();
+        m2.honk();
+        System.out.println();
+        m3.pedal();
+        m3.honk();
+         */
+        //super keyword in inheritance
+        /*
+        Number2 n2 = new Number2();
+        n2.show();
+        n2.showSuper();
+         */
+
+        //how access modifiers differ inside packages in inhertance
+        /*
+        BB bb = new BB();
+        // This statemet will generate compile-time error because we cannot access private members in the subclass.
+        System.out.println(bb.a);
+        // This statement will generate a compile time error
+        // because we can access default members of the superclass in the subclass within the same package only.
+        System.out.println(bb.b);
+        // This statement will produce a compile time error
+        // because we can access protected members of the superclass in the subclass within the same package only.
+        System.out.println(bb.c);
+        System.out.println(bb.d); // public members can be accessible anywhere.
+         */
+        //has a relationship
+        /*
+        //aggregation
+        Address addr = new Address("New York", "NY", "USA", 10001);
+        Student student = new Student("John Doe", 101, addr);
+        student.display();
+        student.getAddress().setCity("Los Angeles");
+        student.getAddress().setState("California");
+        student.display();
+        //composition
+        // Creating an object of Engine class.
+        Engine engine = new Engine("Petrol", 300);
+        Car car = new Car("Alto", engine);
+        System.out.println("Name of car: " +car.getName()+ "\n" +"Type of engine: " +engine.getType()+ "\n" + "Horse power of Engine: " +engine.getHorsePower());
          */
     }
     }
