@@ -1,7 +1,4 @@
-import inheritance.hasARelationShip.Aggregation.Address;
-import inheritance.hasARelationShip.Aggregation.Student;
-import inheritance.hasARelationShip.Composition.Car;
-import inheritance.hasARelationShip.Composition.Engine;
+import inheritance.diamondProblem.C;
 
 public class Main {
     public static void main(String[] args) {
@@ -177,6 +174,11 @@ public class Main {
         Engine engine = new Engine("Petrol", 300);
         Car car = new Car("Alto", engine);
         System.out.println("Name of car: " +car.getName()+ "\n" +"Type of engine: " +engine.getType()+ "\n" + "Horse power of Engine: " +engine.getHorsePower());
+         */
+        //this way without multiple inheritance or not causing diamond problem we can call A from C
+        /*
+        C c = new C();
+        c.m2();
          */
     }
     }
