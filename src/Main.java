@@ -1,4 +1,5 @@
 import inheritance.diamondProblem.C;
+import superAndThis.thisExp.Student;
 
 public class Main {
     public static void main(String[] args) {
@@ -180,6 +181,7 @@ public class Main {
         C c = new C();
         c.m2();
          */
+
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
