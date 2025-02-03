@@ -13,6 +13,8 @@ import overloading.subAndSup.Sub;
 import overloading.subAndSup.Sup;
 import superAndThis.thisExp.Student;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         //checking static and non-static
@@ -246,6 +248,7 @@ public class Main {
          */
 
         //Class casting
+        /*
         //this is generalization or widening as we assign subclass to super class which super is size wise bigger
         //that is why it is
         A1 a1 = (A1) new B1(); // A a = new B(); you can write like this because (B) is automatically put
@@ -255,8 +258,21 @@ public class Main {
         b1.m2();
         b1.m1();
         //for this you will get all subclass methods with subclass's values
+         */
 
-
+        //simple code i did for some reason
+        /*
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Count: ");
+        int count = scanner.nextInt();
+        System.out.print("typeName: ");
+        String typeName = scanner.next();
+        ExpClass expClass = new ExpClass();
+        expClass.setCount(count);
+        expClass.setTypeName(typeName);
+        expClass.display();
+        System.out.println(expClass.toString());
+         */
 
     }
     }
