@@ -1,4 +1,16 @@
-import inheritance.diamondProblem.C;
+import inheritance.diamondProblem.A;
+import inheritance.diamondProblem.B;
+//import inheritance.diamondProblem.C;
+import overloading.Addition;
+import overloading.Multiplication;
+import overloading.Subtraction;
+import overloading.classCasting.A1;
+import overloading.classCasting.B1;
+import overloading.objectParameters.Animal;
+import overloading.objectParameters.FoodTest;
+import overloading.objectParameters.Lion;
+import overloading.subAndSup.Sub;
+import overloading.subAndSup.Sup;
 import superAndThis.thisExp.Student;
 
 public class Main {
@@ -105,12 +117,14 @@ public class Main {
         System.out.println("student roll no is " + encaspClass.getStdRollNo());
         System.out.println("student id is " + encaspClass.getStdId());
          */
-        //how inhertance works
+
+        //how inheritance works
         /*
         SubClass subClass = new SubClass();
         subClass.features();
         subClass.ownFeature();
          */
+
         //when assigned to reference of superclass, depending on which class is assigned, it gives answer for that
         /*
         Animal animal;
@@ -119,6 +133,7 @@ public class Main {
         animal = new Parrot();
         animal.makeSound();
          */
+
         //when assigned to class reference animal even if assigned via rabbit can't use rabbit's methods. this is upcasting
         /*
         Animal animal = new Rabbit();
@@ -131,6 +146,7 @@ public class Main {
         rabbit.munch();
         rabbit.eat();
          */
+
         //to show inheritance between sub and super class
         /*
         M2 m2 = new M2("Toyota", "Corolla");
@@ -141,6 +157,7 @@ public class Main {
         m3.pedal();
         m3.honk();
          */
+
         //super keyword in inheritance
         /*
         Number2 n2 = new Number2();
@@ -148,10 +165,10 @@ public class Main {
         n2.showSuper();
          */
 
-        //how access modifiers differ inside packages in inhertance
+        //how access modifiers differ inside packages in inheritance
         /*
         BB bb = new BB();
-        // This statemet will generate compile-time error because we cannot access private members in the subclass.
+        // This statement will generate compile-time error because we cannot access private members in the subclass.
         System.out.println(bb.a);
         // This statement will generate a compile time error
         // because we can access default members of the superclass in the subclass within the same package only.
@@ -161,6 +178,7 @@ public class Main {
         System.out.println(bb.c);
         System.out.println(bb.d); // public members can be accessible anywhere.
          */
+
         //has a relationship
         /*
         //aggregation
@@ -176,11 +194,69 @@ public class Main {
         Car car = new Car("Alto", engine);
         System.out.println("Name of car: " +car.getName()+ "\n" +"Type of engine: " +engine.getType()+ "\n" + "Horse power of Engine: " +engine.getHorsePower());
          */
+
         //this way without multiple inheritance or not causing diamond problem we can call A from C
         /*
         C c = new C();
         c.m2();
          */
+
+        //simple overloading
+        /*
+        Addition a = new Addition();
+        a.setA(10);
+        a.setB(20);
+        a.setC(3);
+        int num1 = a.getA();
+        int num2 = a.getB();
+        int num3 = a.getC();
+        a.sum(num1, num2, num3);
+        a.sum(num1, num2);
+        //or
+        a.sum(10, 20); // It will call sum() method to calculate sum of two arguments.
+        a.sum(50, 100, 200); // It will call sum() method to calculate sum of three arguments.
+        //example for changing types
+        Subtraction s = new Subtraction();
+        s.sub(23,19);
+        s.sub(12.3, 11.1);
+        //example for changing sequence
+        Multiplication m = new Multiplication();
+        m.multiply(1.1, 3);
+        m. multiply(4, 1.2);
+         */
+
+        //overloading after extend
+        /*
+        Sub sub = new Sub();
+        sub.msg(1,2);
+        sub.msg(1.1,2.2);
+         */
+
+        //overloading via objects
+        /*
+        // In method overloading, the resolution is always taken care of by the compiler based on the reference type only.
+        // Runtime object never plays any role in overloading.
+        FoodTest foodTest = new FoodTest();
+        Animal animal = new Animal();
+        foodTest.food(animal);
+        Lion lion = new Lion();
+        foodTest.food(lion);
+        //it always first choose child class, that is why null choose lion subclass and not animal superclass
+        foodTest.food(null);
+         */
+
+        //Class casting
+        //this is generalization or widening as we assign subclass to super class which super is size wise bigger
+        //that is why it is
+        A1 a1 = (A1) new B1(); // A a = new B(); you can write like this because (B) is automatically put
+        a1.m1();
+        //a1.m2(); it isn't possible
+        B1 b1 = (B1) a1; // this is down casting as we assign superclass to subclass
+        b1.m2();
+        b1.m1();
+        //for this you will get all subclass methods with subclass's values
+
+
 
     }
     }
