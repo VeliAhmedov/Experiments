@@ -11,6 +11,9 @@ import overloading.objectParameters.FoodTest;
 import overloading.objectParameters.Lion;
 import overloading.subAndSup.Sub;
 import overloading.subAndSup.Sup;
+import overriding.Change;
+import overriding.covariantReturnType.A2;
+import overriding.covariantReturnType.B2;
 import superAndThis.thisExp.Student;
 
 import java.util.Scanner;
@@ -273,6 +276,21 @@ public class Main {
         expClass.display();
         System.out.println(expClass.toString());
          */
+
+        //override example
+        /*
+        Change change = new Change();
+        change.marryDate();
+        change.engagementDate();
+         */
+
+        //override return type change
+        B2 b2 = new B2();
+        A2 a2 = new A2();
+        A2 a3 = new B2();
+        b2.m1();
+        a2.m1();
+        a3.m1();
 
     }
     }
