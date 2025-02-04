@@ -1,20 +1,12 @@
-import inheritance.diamondProblem.A;
-import inheritance.diamondProblem.B;
+import abstraction.absClassExp.Deduct;
+import abstraction.absClassExp.Multip;
+import abstraction.absClassExp.Sum;
+import abstraction.interfaceExp.A3;
+import abstraction.interfaceExp.B3;
+import abstraction.interfaceExp2.Circle;
+import abstraction.interfaceExp2.Drawable;
+import abstraction.interfaceExp2.Rectangle;
 //import inheritance.diamondProblem.C;
-import overloading.Addition;
-import overloading.Multiplication;
-import overloading.Subtraction;
-import overloading.classCasting.A1;
-import overloading.classCasting.B1;
-import overloading.objectParameters.Animal;
-import overloading.objectParameters.FoodTest;
-import overloading.objectParameters.Lion;
-import overloading.subAndSup.Sub;
-import overloading.subAndSup.Sup;
-import overriding.Change;
-import overriding.covariantReturnType.A2;
-import overriding.covariantReturnType.B2;
-import superAndThis.thisExp.Student;
 
 import java.util.Scanner;
 
@@ -285,13 +277,47 @@ public class Main {
          */
 
         //override return type change
+        /*
         B2 b2 = new B2();
         A2 a2 = new A2();
         A2 a3 = new B2();
         b2.m1();
         a2.m1();
         a3.m1();
+         */
 
+        //abstract example
+        /*
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        Sum sum = new Sum();
+        Deduct deduct = new Deduct();
+        Multip multiply = new Multip();
+        sum.calculate(a, b);
+        deduct.calculate(a, b);
+        multiply.calculate(a, b);
+         */
+
+        //interface example
+        /*
+        B3 b3 = new B3();
+        b3.msg();
+        b3.msg2();
+        A3 a3 = new B3();
+        a3.msg();
+        //a3.show() | will not work because a3 is referenced to B3 so compiler checks and give compiler error
+        // A3 a4 = new A3() | you can't create object of abstract (both abstract class and interface)
+         */
+
+        //interface example with 2 classes
+        Rectangle rectangle = new Rectangle(1.2,3.2);
+        Circle circle = new Circle(1.7);
+        rectangle.draw();
+        circle.draw();
+        rectangle.coloring();
+        circle.coloring();
+        Drawable.ready();
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
