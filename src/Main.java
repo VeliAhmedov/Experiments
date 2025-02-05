@@ -1,14 +1,9 @@
-import abstraction.absClassExp.Deduct;
-import abstraction.absClassExp.Multip;
-import abstraction.absClassExp.Sum;
-import abstraction.interfaceExp.A3;
-import abstraction.interfaceExp.B3;
-import abstraction.interfaceExp2.Circle;
-import abstraction.interfaceExp2.Drawable;
-import abstraction.interfaceExp2.Rectangle;
-//import inheritance.diamondProblem.C;
+//import Phase3.inheritance.diamondProblem.C;
 
-import java.util.Scanner;
+
+import Phase3.abstraction.interfaceExp2.Circle;
+import Phase3.abstraction.interfaceExp2.Drawable;
+import Phase3.abstraction.interfaceExp2.Rectangle;
 
 public class Main {
     public static void main(String[] args) {
@@ -98,11 +93,13 @@ public class Main {
          */
 
         //Simple calculation
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter x and y");
-//        int x = sc.nextInt();
-//        int y = sc.nextInt();
-//        Calculation.calculationSum(x,y);
+        /*
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter x and y");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        Calculation.calculationSum(x,y);
+         */
 
         //encapsulation example for encaps class
         /*
@@ -115,7 +112,7 @@ public class Main {
         System.out.println("student id is " + encaspClass.getStdId());
          */
 
-        //how inheritance works
+        //how Phase3.inheritance works
         /*
         SubClass subClass = new SubClass();
         subClass.features();
@@ -144,7 +141,7 @@ public class Main {
         rabbit.eat();
          */
 
-        //to show inheritance between sub and super class
+        //to show Phase3.inheritance between sub and super class
         /*
         M2 m2 = new M2("Toyota", "Corolla");
         M3 m3 = new M3("Schwinn");
@@ -155,14 +152,14 @@ public class Main {
         m3.honk();
          */
 
-        //super keyword in inheritance
+        //super keyword in Phase3.inheritance
         /*
         Number2 n2 = new Number2();
         n2.show();
         n2.showSuper();
          */
 
-        //how access modifiers differ inside packages in inheritance
+        //how access modifiers differ inside packages in Phase3.inheritance
         /*
         BB bb = new BB();
         // This statement will generate compile-time error because we cannot access private members in the subclass.
@@ -192,13 +189,13 @@ public class Main {
         System.out.println("Name of car: " +car.getName()+ "\n" +"Type of engine: " +engine.getType()+ "\n" + "Horse power of Engine: " +engine.getHorsePower());
          */
 
-        //this way without multiple inheritance or not causing diamond problem we can call A from C
+        //this way without multiple Phase3.inheritance or not causing diamond problem we can call A from C
         /*
         C c = new C();
         c.m2();
          */
 
-        //simple overloading
+        //simple Phase3.overloading
         /*
         Addition a = new Addition();
         a.setA(10);
@@ -222,17 +219,17 @@ public class Main {
         m. multiply(4, 1.2);
          */
 
-        //overloading after extend
+        //Phase3.overloading after extend
         /*
         Sub sub = new Sub();
         sub.msg(1,2);
         sub.msg(1.1,2.2);
          */
 
-        //overloading via objects
+        //Phase3.overloading via objects
         /*
-        // In method overloading, the resolution is always taken care of by the compiler based on the reference type only.
-        // Runtime object never plays any role in overloading.
+        // In method Phase3.overloading, the resolution is always taken care of by the compiler based on the reference type only.
+        // Runtime object never plays any role in Phase3.overloading.
         FoodTest foodTest = new FoodTest();
         Animal animal = new Animal();
         foodTest.food(animal);
@@ -311,6 +308,7 @@ public class Main {
          */
 
         //interface example with 2 classes
+        /*
         Rectangle rectangle = new Rectangle(1.2,3.2);
         Circle circle = new Circle(1.7);
         rectangle.draw();
@@ -318,6 +316,11 @@ public class Main {
         rectangle.coloring();
         circle.coloring();
         Drawable.ready();
+         */
+
+        //PHASE4
+
+
     }
     }
     //when constructor is private, you can't extend and can't make instance of it outside
