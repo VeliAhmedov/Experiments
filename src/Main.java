@@ -4,9 +4,20 @@
 import Phase3.abstraction.interfaceExp2.Circle;
 import Phase3.abstraction.interfaceExp2.Drawable;
 import Phase3.abstraction.interfaceExp2.Rectangle;
+import Phase4.CustomException;
+import Phase4.ExceptionTest;
+import Phase4.ThrowsExample;
+import Phase4.exceptionChainExample.DataProcessingException;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import static Phase4.ExceptionDivide.divide;
+import static Phase4.exceptionChainExample.ExceptionChainingExample.processData;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, CustomException {
+        Scanner sc = new Scanner(System.in);
         //checking static and non-static
 
 //        Student.studying();
@@ -94,7 +105,6 @@ public class Main {
 
         //Simple calculation
         /*
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter x and y");
         int x = sc.nextInt();
         int y = sc.nextInt();
@@ -254,11 +264,10 @@ public class Main {
 
         //simple code i did for some reason
         /*
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Count: ");
-        int count = scanner.nextInt();
+        int count = sc.nextInt();
         System.out.print("typeName: ");
-        String typeName = scanner.next();
+        String typeName = sc.next();
         ExpClass expClass = new ExpClass();
         expClass.setCount(count);
         expClass.setTypeName(typeName);
@@ -285,9 +294,8 @@ public class Main {
 
         //abstract example
         /*
-        Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
         Sum sum = new Sum();
         Deduct deduct = new Deduct();
         Multip multiply = new Multip();
@@ -319,11 +327,137 @@ public class Main {
          */
 
         //PHASE4
+        //Exception test
+        /*
+        int number1 = sc.nextInt();
+        int number2 = sc.nextInt();
+        try {
+            //Note: if it was double instead of int, it will give answer infinity instead dof
+            System.out.println("Calculation begins");
+            int result = number1 /number2;
+            System.out.println(number1 + "/" + number2 + " is " + result);
+        }catch (ArithmeticException e) {
+            System.out.println("can't divide by zero");
+        }
+        System.out.println("calculation end here");
+         */
+
+        //inside catch
+        /*
+        System.out.println("111");
+        try {
+            System.out.println("222");
+            int y = 1 / 0;
+        } catch (ArithmeticException e) {
+            try {
+                System.out.println("Hello");
+                int x = 20 / 0;
+            } catch (NullPointerException np) {
+                System.out.println("333");
+            }
+        }
+        System.out.println("444");
+         */
+
+        //Note: you can have multiple catch in your exception handling
+
+        //return statement in try catch block
+        //as you see end 100 isn't printed because return in method finished method overall
+        /*
+        ExceptionTest exceptionTest = new ExceptionTest();
+        System.out.println(exceptionTest.m1());
+         */
+
+        //throw example
+        /*
+        int num = 1;
+        for(num = 1; num <= 10; num++) {
+            try
+            {
+                if(num == 5)
+                    throw new ArithmeticException("ArithmeticException");
+                else if(num < 2)
+                    throw new RuntimeException("RuntimeException");
+                else if(num > 9)
+                    throw new NullPointerException("NullPointerException");
+            }
+            catch(Exception e)
+            {
+                System.out.println("Caught an exception");
+                System.out.println(e.getMessage());
+            }
+        }
+         */
+
+        //throws example
+        //throws IOexception used in main method
+        /*
+        ThrowsExample te = new ThrowsExample();
+        te.accept();
+        te.display();
+         */
+
+        //custom exception
+        /*
+        try {
+            System.out.println("Enter numbers");
+            int expNum1 = sc.nextInt();
+            int expNum2 = sc.nextInt();
+            int result = expNum1*expNum2;
+            if (result>=100){
+                throw new CustomException("value is bigger than 100");
+            }else {
+                System.out.println("result is "+result);
+            }
+        }catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+         */
+
+
+//        NullPointerException e = new NullPointerException("Primary Exception");
+//        e.initCause(new ArithmeticException("Root Cause: Division by zero"));
+//        System.out.println(e); // Output: java.lang.NullPointerException: Primary Exception
+//        System.out.println(e.getCause());
+
+        //chained exception example
+        /*
+        try {
+            int result = 10/0;
+        } catch (Exception e) {
+            // Create an instance of exception and set 'e' as its cause
+            CustomException customException = new CustomException("An error occurred");
+            customException.initCause(e);
+            // Throw the new exception
+            throw customException;
+        }
+         */
+        //chain after chain after chan exception example
+        /*
+        try {
+            processData();
+        } catch (DataProcessingException e) {
+            System.err.println("Exception: " + e.getMessage());
+
+            // Retrieve and print the cause chain
+            Throwable cause = e.getCause();
+            while (cause != null) {
+                System.err.println("Caused by: " + cause.getMessage());
+                cause = cause.getCause();
+            }
+        }
+         */
 
 
     }
-    }
-    //when constructor is private, you can't extend and can't make instance of it outside
+}
+
+
+
+
+//when constructor is private, you can't extend and can't make instance of it outside
 //2 use of private constructor are:
 //1. We use private constructor when we want to prevent other classes from creating an object of a class.
 //2. We can use it in single tone classes where the object of the class cannot be created outside the class.
