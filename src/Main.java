@@ -1,21 +1,19 @@
 //import Phase3.inheritance.diamondProblem.C;
 
 
-import Phase3.abstraction.interfaceExp2.Circle;
-import Phase3.abstraction.interfaceExp2.Drawable;
-import Phase3.abstraction.interfaceExp2.Rectangle;
 import Phase4.CustomException;
-import Phase4.ExceptionTest;
-import Phase4.ThrowsExample;
-import Phase4.exceptionChainExample.DataProcessingException;
+import Phase4.immutableClass.ImmutableClassExp;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
-import static Phase4.ExceptionDivide.divide;
-import static Phase4.exceptionChainExample.ExceptionChainingExample.processData;
-
 public class Main {
+    static {
+
+    }
     public static void main(String[] args) throws IOException, CustomException {
         Scanner sc = new Scanner(System.in);
         //checking static and non-static
@@ -450,6 +448,20 @@ public class Main {
         }
          */
 
+        //Immutable class example
+        /*
+        //accessing to immutable class
+        List<String>hobbies = Arrays.asList("Swimming", "Reading");
+        ImmutableClassExp ice = ImmutableClassExp.createInstance("Vali", 22, hobbies);
+        System.out.println(ice);
+
+        // Trying to modify the hobbies list
+        hobbies.add("Hiking"); // This won't affect ImmutablePerson's hobbies
+        System.out.println(ice.getHobbies());
+         */
+        String sb = "Hello Darkness my old friend";
+        System.out.println(sb.toLowerCase());
+        System.out.println(sb.toUpperCase());
 
     }
 }
