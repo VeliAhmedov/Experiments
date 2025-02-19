@@ -1,19 +1,18 @@
 //import Phase3.inheritance.diamondProblem.C;
 
 
+import Phase2.constructorChain.Source;
 import Phase4.CustomException;
-import Phase4.immutableClass.ImmutableClassExp;
+import Phase4.array.NewStudent;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     static {
 
     }
+
     public static void main(String[] args) throws IOException, CustomException {
         Scanner sc = new Scanner(System.in);
         //checking static and non-static
@@ -459,9 +458,198 @@ public class Main {
         hobbies.add("Hiking"); // This won't affect ImmutablePerson's hobbies
         System.out.println(ice.getHobbies());
          */
-        String sb = "Hello Darkness my old friend";
-        System.out.println(sb.toLowerCase());
-        System.out.println(sb.toUpperCase());
+//        LocalDate ld = LocalDate.now();
+//        LocalDateTime ldt = LocalDateTime.now();
+//        LocalTime lt = LocalTime.now();
+//        ZonedDateTime zdt = ZonedDateTime.now();
+//        System.out.println(ld);
+//        System.out.println(lt);
+//        System.out.println(ldt);
+//        System.out.println(zdt);
+//        System.out.println(ld.getEra());
+//        System.out.println(ld.minusDays(100));
+
+//        String text = sc.nextLine().toLowerCase().trim();
+//        text = text.replaceAll("[^a-z\\s]", "");
+//        String[] words = text.split("\\s+");
+//        Set<String> seen = new HashSet<>();
+//        Set<String> duplicates = new HashSet<>();
+//        for (String word : words) {
+//            if (!seen.add(word)) { // If already seen, it's a duplicate
+//                duplicates.add(word);
+//            }
+//        }
+//        for (String word : duplicates) {
+//            System.out.println(word);
+//        }
+//        sc.close();
+
+        //via fixed size array and loop adding student info
+        /*
+        NewStudent[] NewStudents = new NewStudent[3];
+        for (int i = 0; i < NewStudents.length; i++) {
+            NewStudents[i] = new NewStudent();
+            NewStudents[i].setFirstName(sc.nextLine());
+            NewStudents[i].setRollNo(sc.nextInt());
+            sc.nextLine();
+        }
+        for (NewStudent newStudent : NewStudents) {
+            System.out.println(newStudent.getFirstName() + " " + newStudent.getRollNo());
+        }
+         */
+
+        //2D array to sum of all elements and column each
+        /*
+        int [] [] nums = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int sum = 0;
+        System.out.println("Matrix:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(nums[i][j] + "\t");
+                sum += nums[i][j];
+            }
+            System.out.println();
+        }
+        for (int j = 0; j <nums[0].length; j++) {
+            int total = 0;
+            for (int i = 0; i < nums.length; i++) {
+                total += nums[i][j];
+            }
+            System.out.println("Sum of column["+j+"] = "+total);
+        }
+        System.out.println("Sum of all numbers: " + sum);
+         */
+
+        // showing total mark of each student on row
+        /*
+        String[ ] str = {"Deep", "Amit","Larry"}; // One dimensional array.
+        int[ ][ ] marks = new int[3][5]; // Two dimensional array.
+        // Allocating memory for marks obtained in three subjects by student Deep.
+        marks[0][0] = 80;
+        marks[0][1] = 97;
+        marks[0][2] = 80;
+        // Allocating memory for marks obtained in three subjects by student Amit.
+        marks[1][0] = 99;
+        marks[1][1] = 98;
+        marks[1][2] = 100;
+        // Allocating memory for marks obtained in three subjects by student Larry.
+        marks[2][0] = 87;
+        marks[2][1] = 99;
+        marks[2][2] = 93;
+        for (int i = 0; i <marks.length ; i++) {
+            int total = 0;
+            for (int j = 0; j < marks[i].length; j++) {
+                total += marks[i][j];
+            }
+            double percentage = (double) total / marks[i].length * 100 / 100; // Fix percentage calculation
+            System.out.println(str[i] + "'s total marks: " + total);
+            System.out.println(str[i] + "'s percentage: " + percentage + "%");
+        }
+         */
+
+        //jagged array example
+        /*
+        int[ ][ ] x = new int[4][ ];
+        x[0] = new int[1];
+        x[1] = new int[2];
+        x[2] = new int[3];
+        x[3] = new int[4];
+        int i, j, k = 0;
+        for(i = 0; i < 4; i++)
+        {
+            for(j = 0; j < i + 1; j++)
+            {
+                x[i][j] = k;
+                k++;
+            }
+        }
+        for(i=0; i<4; i++)
+        {
+            for(j=0; j<i+1; j++)
+                System.out.print(x[i][j] + " ");
+            System.out.println();
+        }
+         */
+
+        //transpose array example
+        /*
+        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        for (int i = 0; i < 3; i ++){
+            for (int j = 0; j < 3; j ++){
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("--------------------------------------");
+        for (int i = 0; i < 3; i ++){
+            for (int j = 0; j < 3; j ++){
+                System.out.print(arr[j][i] + "\t");
+            }
+            System.out.println();
+        }
+         */
+
+        //transpose matrix but we add values via scanner
+        /*
+        System.out.println("Enter row then column");
+        int row = sc.nextInt();
+        int column = sc.nextInt();
+        int [][] arr = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("original matrix");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("------------------------------");
+        System.out.println("Transpose matrix");
+        for (int i = 0; i < column; i++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print(arr[j][i] + "\t");
+            }
+            System.out.println();
+        }
+         */
+
+        //3D array matrix printing and showing sum of each score for each student for each department
+        /*
+        String[ ] department = {"Electronics", "CS", "IT"};
+        String[ ] student = {"Emil","Mark", "Jason"};
+        int depart, std, score, total = 0;
+        double perc = 0;
+        int[ ][ ][ ] scores = {
+                {{75, 87, 69}, {90, 87, 85},{56, 67, 76}},
+                {{78, 67, 75}, {87, 98, 76}, {67, 56, 66}},
+                {{72, 63, 72}, {82, 91, 71}, {64, 56, 66}}
+        };
+        for (depart = 0; depart < department.length; depart++) {
+            System.out.println("Department: " + department[depart]);
+
+            for (std = 0; std < 3; std++) {
+                System.out.println(student[std]+"'s score:");
+
+                total = 0; // Reset total for each student
+                for (score = 0; score < 3; score++) {
+                    System.out.print(scores[depart][std][score] + "\t");
+                    total += scores[depart][std][score];
+                }
+
+                System.out.println("\nTotal scores: " + total);
+                perc = (double) total / (3 * 100) * 100; // Assuming max marks per subject is 100
+                System.out.println("Percentage: " + perc + "%\n");
+            }
+            System.out.println("-------------------");
+        }
+         */
+
+
+
 
     }
 }
