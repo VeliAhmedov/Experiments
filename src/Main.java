@@ -3,7 +3,7 @@
 
 import Phase2.constructorChain.Source;
 import Phase4.CustomException;
-import Phase4.array.NewStudent;
+import Phase4.array.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -648,9 +648,115 @@ public class Main {
         }
          */
 
+        //giving fixed size to 3D array then adding  values then printing
+        /*
+        System.out.print("Enter number of tables: ");
+        int tables = sc.nextInt();
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
+        int[][][] num = new int[tables][rows][cols];
+        //input values
+        for (int i = 0; i < tables; i++) {
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < cols; k++) {
+                    System.out.print("Enter value for num[" + i + "][" + j + "][" + k + "]: ");
+                    num[i][j][k] = sc.nextInt();
+                }
+            }
+        }
+        // Output values
+        for (int i = 0; i < tables; i++) {
+            System.out.println("Table " + (i + 1));
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < cols; k++) {
+                    System.out.print(num[i][j][k] + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+         */
 
+        //changing value in array
+        /*
+        int [] nums = {10,20,30,40,50};
+        ArrayValueChanger avc = new ArrayValueChanger();
+        System.out.println("After array as whole modification");
+        System.out.println("Original");
+        for (int num : nums) {
+            System.out.printf(" %d", num);
+        }
+        System.out.println();
+        System.out.println("After");
+        avc.modifyArray(nums);
+        for (int num : nums) {
+            System.out.printf(" %d", num);
+        }
+        System.out.println();
 
+        System.out.println("Now we will modify single element of the array nums[3] before change:"+nums[3]);
+        avc.modifyArrayElement(nums[3]);
+        System.out.println("nums[3] after change:"+nums[3]);
+         */
 
+        //2D array passing to method
+        /*
+        int [][] nums = {
+                {1,2,3,4,5},
+                {6,7,8,9,10}
+        };
+        ArrayClassPrint acp = new ArrayClassPrint();
+        acp.array2DPrint(nums);
+         */
+
+        //array as return value
+        /*
+        ArrayAsReturnType aart = new ArrayAsReturnType();
+        int [] nums = aart.display();
+        int result =0;
+        for (int num : nums) {
+            System.out.print(num + "\t");
+            result += num;
+        }
+        System.out.println();
+        System.out.print("sum of numbers: " + result);
+         */
+
+        //2D array to use to find sum of 2 2D arrays
+        /*
+        int [][] x = {
+                {1,2,3},
+                {4,5,6},
+        };
+        int [][] y = {
+                {7,8,9},
+                {10,11,12},
+        };
+        ArrayAsReturnType aart = new ArrayAsReturnType();
+        int [][] z = aart.sum(x,y);
+        System.out.println("2D array x:");
+        aart.show(x);
+        System.out.println("2D array y:");
+        aart.show(y);
+        System.out.println("sum of 2D array x and y:");
+        aart.show(z);
+         */
+
+        //in between prime number finder
+        /*
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        //this here put num1 to num2 and num2 to num1 if num1 is bigger number than num2
+        if (num1 > num2) {
+            int temp = 0;
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        FindPrimeNumberInBetween.findPrimeNumberInBetween(num1, num2);
+         */
     }
 }
 
