@@ -4,9 +4,12 @@
 import Phase2.constructorChain.Source;
 import Phase4.CustomException;
 import Phase4.array.*;
+import Phase4.array.objectArray.StudentArray;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     static {
@@ -757,6 +760,96 @@ public class Main {
         }
         FindPrimeNumberInBetween.findPrimeNumberInBetween(num1, num2);
          */
+
+        //Array copy methods
+        /*
+        int [] num = {1,2,3,4,5};
+        int [] num1 = Arrays.copyOf(num,5);
+        int [] num2 = Arrays.copyOf(num,3);
+        int [] num3 = Arrays.copyOf(num,8);
+        System.out.println(Arrays.toString(num));
+        System.out.println(Arrays.toString(num1));
+        System.out.println(Arrays.toString(num2));
+        System.out.println(Arrays.toString(num3));
+         */
+
+        //Array stream method
+        /*
+        //printing
+        Arrays.stream(new int[]{1, 2, 3}).forEach(System.out::println);
+        //using map to print their multiplied by 2
+        Arrays.stream(new int[]{1, 2, 3})
+                .map(x -> x * 2)
+                .forEach(System.out::println);
+        //filtering by even numbers
+        Arrays.stream(new int[]{1, 2, 3, 4})
+                .filter(x -> x % 2 == 0)
+                .forEach(System.out::println);
+        //combining(sum) of all values
+        int sum = Arrays.stream(new int[]{1, 2, 3, 4})
+                .reduce(0, Integer::sum);
+        System.out.println(sum);
+        //collecting to list like asList does
+        List<Integer> list = Arrays.stream(new Integer[]{1, 2, 3})
+                .collect(Collectors.toList());
+        System.out.println(list);
+        //sorting array
+        Arrays.stream(new int[]{3, 1, 4, 2})
+                .sorted()
+                .forEach(System.out::println);
+        //removing duplicates
+        Arrays.stream(new int[]{1, 2, 2, 3, 3})
+                .distinct()
+                .forEach(System.out::println);
+        //restricting to specified size like copyOfRange
+        Arrays.stream(new int[]{1, 2, 3, 4, 5})
+                .limit(3)
+                .forEach(System.out::println);
+        //skipping first n elements after specified index
+        Arrays.stream(new int[]{1, 2, 3, 4, 5})
+                .skip(2)
+                .forEach(System.out::println);
+        //checking if array satisfy condition in this case if array has even number, one is enough
+        boolean hasEven = Arrays.stream(new int[]{1, 2, 3})
+                .anyMatch(x -> x % 2 == 0);
+        System.out.println(hasEven);
+         */
+
+        //to find target number inside array via linear search
+        /*
+        int[ ] numbers = new int[10];
+        for (int i = 0; i < 10; i++ ) {
+            numbers[i] = sc.nextInt();
+        }
+        System.out.println("Enter target number");
+        int number = sc.nextByte();
+        boolean flag = false;
+        int indexLocation = 0;
+        for (int j = 0; j < 10; j++) {
+            if (numbers[j] == number) {
+                flag = true;
+                indexLocation = j;
+                break;
+            }
+        }
+        if (flag) {
+            System.out.println(number+" does exist in numbers array in index["+indexLocation+"]");
+        }else {
+            System.out.println(number+" does not exist in numbers array");
+        }
+         */
+
+        //bubble sort algorithm example
+        /*
+        int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+        int length = arr.length;
+        BubbleSortAlgorithm.bubbleSort(arr, length);
+        System.out.println("Sorted array:");
+        BubbleSortAlgorithm.printArray(arr);
+         */
+
+
+
     }
 }
 
