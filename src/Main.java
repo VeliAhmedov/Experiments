@@ -847,9 +847,17 @@ public class Main {
         System.out.println("Sorted array:");
         BubbleSortAlgorithm.printArray(arr);
          */
+        StudentArray [] sta = new StudentArray[6];
+        sta[0] = new StudentArray("Vali", 22);
+        sta[1] = new StudentArray("Ali", 23);
+        sta[2] = new StudentArray("Murad", 39);
+        sta[3] = new StudentArray("Hasan", 12);
+        sta[4] = new StudentArray("Nadir", 33);
+        sta[5] = new StudentArray("Samir", 25);
 
-
-
+        for(int i =0; i <sta.length; i++){
+            System.out.println("Student name: "+ sta[i].getStdName()+", student age: "+ sta[i].getAge());
+        }
     }
 }
 
