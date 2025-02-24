@@ -8,8 +8,18 @@ import Phase4.array.objectArray.StudentArray;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.security.SecureRandom;
+import java.security.SignedObject;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 public class Main {
     static {
@@ -847,6 +857,9 @@ public class Main {
         System.out.println("Sorted array:");
         BubbleSortAlgorithm.printArray(arr);
          */
+
+        //user defined object array here
+        /*
         StudentArray [] sta = new StudentArray[6];
         sta[0] = new StudentArray("Vali", 22);
         sta[1] = new StudentArray("Ali", 23);
@@ -858,6 +871,63 @@ public class Main {
         for(int i =0; i <sta.length; i++){
             System.out.println("Student name: "+ sta[i].getStdName()+", student age: "+ sta[i].getAge());
         }
+         */
+
+//        Car car = new Car(4, new Engine("combusted", 6));
+//        car.display();
+
+
+        //random class
+        /*
+        Random rand = new Random();
+        System.out.println(rand.nextInt());
+        System.out.println(rand.nextBoolean());
+        System.out.println(rand.nextDouble());
+        System.out.println(rand.nextFloat());
+        System.out.println(rand.nextLong());
+        System.out.println(rand.nextInt());
+        System.out.println(rand.nextDouble(2,10));
+        System.out.println(rand.nextFloat(2,10));
+        System.out.println(rand.nextLong(2,10));
+        System.out.println(rand.nextInt(2,10));
+        System.out.println(rand.nextInt(10));
+        byte [] randomBytes = new byte[5];
+        rand.nextBytes(randomBytes);
+        System.out.println(Arrays.toString(randomBytes));
+        int [] randomInts = new int[5];
+        RandomGenerator rg1 = new SecureRandom();
+        RandomGenerator rg2 = new Random();
+        IntStream intStream = rg1.ints(3,1,10);
+        DoubleStream doubleStream = rg2.doubles(3,1,10);
+        LongStream longStream = rg1.longs(2,10,100);
+        intStream.forEach(System.out::println); //3,8,6
+        doubleStream.forEach(System.out::println); // 6.9437463098716865 | 4.860742741450132 | 7.44673824345026
+        longStream.forEach(System.out::println); //17, 71
+        RandomGenerator rg = new SecureRandom();
+        SecureRandom sr = new SecureRandom();
+         */
+
+        //Has a relationship in java
+        /*
+        Car [] cars = new Car[3];
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println("How many wheels:");
+            int wheels = sc.nextInt();
+            sc.nextLine();
+            System.out.println("Name of engine part:");
+            String enginePart = sc.nextLine();
+            System.out.println("Amount of cylinders:");
+            int cylinders = sc.nextInt();
+            cars[i] = new Car(wheels, new Engine(enginePart, cylinders));
+        }
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println("vehicle"+(i+1)+":");
+            cars[i].display();
+        }
+         */
+
+
+
     }
 }
 
