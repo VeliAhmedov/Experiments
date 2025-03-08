@@ -3,6 +3,10 @@
 
 import Phase4.CustomException;
 import Phase4.collection.HashSetExample;
+import Phase4.collection.comparatorExample.Ascend;
+import Phase4.collection.comparatorExample.Descend;
+import Phase4.collection.comparatorExample.StudentComparator;
+import Phase4.collection.comparatorExample.StudentDescend;
 import Phase4.collection.compareToExample.StudentCompareTo;
 import Phase4.collection.example2.DepartmentCollection;
 import Phase4.collection.example2.EmployeeCollection;
@@ -1032,6 +1036,7 @@ public class Main {
          */
 
         //ascending user defined objects via compareTo
+        /*
         ArrayList<StudentCompareTo> students = new ArrayList<>();
         StudentCompareTo sct1 = new StudentCompareTo("Vali", 12, 23);
         StudentCompareTo sct2 = new StudentCompareTo("Ali", 33, 22);
@@ -1043,8 +1048,45 @@ public class Main {
         for (StudentCompareTo sct : students) {
             System.out.println(sct);
         }
+         */
 
-
+        //comparator
+        /*
+        Ascend asc = new Ascend();
+        TreeSet<Integer> ts = new TreeSet<>(asc);
+        ts.add(25);
+        ts.add(15);
+        ts.add(30);
+        ts.add(10);
+        ts.add(40);
+        ts.add(05);
+        for (Integer num : ts) {
+            System.out.print(num+" ");
+        }
+        System.out.println();
+        Descend desc = new Descend();
+        TreeSet<String> tss = new TreeSet<>(desc);
+        tss.add("Apple");
+        tss.add("Aubergine");
+        tss.add("Orange");
+        tss.add("Date");
+        tss.add("Banana");
+        tss.add("Bread");
+        for (String food: tss){
+            System.out.print(food+" ");
+        }
+        System.out.println("Student comparator by age");
+        StudentDescend byAge = new StudentDescend();
+        ArrayList<StudentComparator> students = new ArrayList<>();
+        students.add(new StudentComparator("Vali", 23));
+        students.add(new StudentComparator("Ali", 25));
+        students.add(new StudentComparator("Murad", 15));
+        students.add(new StudentComparator("Aqil", 23));
+        Collections.sort(students, byAge);
+        for (StudentComparator student: students) {
+            System.out.println(student);
+        }
+         */
 
 
 
