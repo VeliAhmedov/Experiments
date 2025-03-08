@@ -3,6 +3,7 @@
 
 import Phase4.CustomException;
 import Phase4.collection.HashSetExample;
+import Phase4.collection.compareToExample.StudentCompareTo;
 import Phase4.collection.example2.DepartmentCollection;
 import Phase4.collection.example2.EmployeeCollection;
 import Phase4.collection.example3.EmpCol;
@@ -1030,8 +1031,18 @@ public class Main {
         }
          */
 
-
-
+        //ascending user defined objects via compareTo
+        ArrayList<StudentCompareTo> students = new ArrayList<>();
+        StudentCompareTo sct1 = new StudentCompareTo("Vali", 12, 23);
+        StudentCompareTo sct2 = new StudentCompareTo("Ali", 33, 22);
+        StudentCompareTo sct3 = new StudentCompareTo("Murad", 4, 24);
+        students.add(sct1);
+        students.add(sct2);
+        students.add(sct3);
+        Collections.sort(students);
+        for (StudentCompareTo sct : students) {
+            System.out.println(sct);
+        }
 
 
 
