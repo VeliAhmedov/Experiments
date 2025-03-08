@@ -1,30 +1,20 @@
 //import Phase3.inheritance.diamondProblem.C;
 
 
-import Phase2.constructorChain.Source;
 import Phase4.CustomException;
-import Phase4.array.*;
-import Phase4.array.objectArray.StudentArray;
+import Phase4.collection.HashSetExample;
+import Phase4.collection.example2.DepartmentCollection;
+import Phase4.collection.example2.EmployeeCollection;
+import Phase4.collection.example3.EmpCol;
+import Phase4.collection.example3.ManagerCol;
 
+import java.awt.*;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.security.SecureRandom;
-import java.security.SignedObject;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 public class Main {
-    static {
-
-    }
 
     public static void main(String[] args) throws IOException, CustomException {
         Scanner sc = new Scanner(System.in);
@@ -925,6 +915,125 @@ public class Main {
             cars[i].display();
         }
          */
+//        StringJoiner sj = new StringJoiner("| ");
+//        RandomGenerator generator = new Random();
+//        for (int i = 0; i <10; i++){
+//            sj.add(String.format("%.4f",generator.nextDouble(10,20)));
+//        }
+//        System.out.format(sj.toString());
+
+//        // Get library info
+//        System.out.println("Enter library name:");
+//        String libName = sc.nextLine();
+//        System.out.println("Enter library address:");
+//        String libAddress = sc.nextLine();
+//        // Create library
+//        Library library = new Library(libName, libAddress);
+//        // Add a book
+//        System.out.println("Enter book title:");
+//        String title = sc.nextLine();
+//        System.out.println("Enter book author:");
+//        String author = sc.nextLine();
+//        System.out.println("Enter ISBN:");
+//        String isbn = sc.nextLine();
+//        Book book1 = new Book(title, author, isbn);
+//        library.addBook(book1);
+//        // Display books
+//        System.out.println("\nAfter adding a book:");
+//        library.displayBooks();
+//        // Add another book
+//        Book book2 = new Book("The Hobbit", "J.R.R. Tolkien", "978-0547928227");
+//        library.addBook(book2);
+//        // Display again
+//        System.out.println("\nAfter adding second book:");
+//        library.displayBooks();
+//        // Remove a book
+//        library.removeBook(isbn);
+//        System.out.println("\nAfter removing book with ISBN " + isbn + ":");
+//        library.displayBooks();
+
+        //creating object of class and storing them inside collection
+        /*
+        ArrayList<StudentCollection> studentList = new ArrayList<>();
+        System.out.println("Amount of student:");
+        int amount = sc.nextInt();
+        for (int i = 0; i < amount; i++) {
+            Long id = (long) (i+1);
+            System.out.println("Enter student name:");
+            String name = sc.next();
+            System.out.println("Enter student number:");
+            int rollNo = sc.nextInt();
+            studentList.add(new StudentCollection(id, name, rollNo));
+        }
+        for (StudentCollection studentCollection : studentList) {
+            System.out.println(studentCollection);
+        }
+         */
+
+        //storing class object that has "has a" relationship
+        /*
+        ArrayList<DepartmentCollection> departmentCollections = new ArrayList<>();
+        System.out.println("Number of departments:");
+        int numberOfDepartments = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < numberOfDepartments; i++) {
+            System.out.print("Department name:");
+            String depName = sc.nextLine();
+            DepartmentCollection dep = new DepartmentCollection(depName);
+            System.out.print("Number of employees of "+ depName+":");
+            int empNum = sc.nextInt();
+            sc.nextLine();
+            for (int j = 0; j < empNum; j++) {
+                System.out.print("Name:");
+                String name = sc.nextLine();
+                System.out.print("Salary:");
+                double salary = sc.nextDouble();
+                sc.nextLine();
+//          EmployeeCollection emp = new EmployeeCollection(name, salary);
+                dep.addEmployeeCollection(new EmployeeCollection(name, salary));
+            }
+            departmentCollections.add(dep);
+        }
+        System.out.println("\nAll Departments:");
+        for (DepartmentCollection dept : departmentCollections) {
+            dept.showDepartmentEmployeeCollections();
+            System.out.println(); // Add spacing between departments
+        }
+         */
+
+        //collection for "is a" relationship
+        /*
+        ArrayList<EmpCol> empCols = new ArrayList<>();
+        System.out.println("Enter the number of employees/Manager: ");
+        int num = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < num; i++) {
+            System.out.println("is this Manager: ");
+            String isManager = sc.nextLine().toLowerCase().trim();
+
+            System.out.println("Enter name");
+            String name = sc.nextLine().trim();
+            System.out.println("Enter salary");
+            double salary = sc.nextDouble();
+            sc.nextLine();
+            if (isManager.equalsIgnoreCase("yes")){
+                System.out.println("Enter department: ");
+                String department = sc.nextLine().trim();
+                empCols.add(new ManagerCol(name,salary, department));
+            }else {
+                empCols.add(new EmpCol(name, salary));
+            }
+        }
+        System.out.println("All employees and Managers");
+        for (EmpCol empCol : empCols) {
+            System.out.println(empCol);
+        }
+         */
+
+
+
+
+
 
 
 
