@@ -12,10 +12,13 @@ import Phase4.collection.example2.DepartmentCollection;
 import Phase4.collection.example2.EmployeeCollection;
 import Phase4.collection.example3.EmpCol;
 import Phase4.collection.example3.ManagerCol;
+import Phase4.collection.priorityQueueExample.TaskPriority;
+import Phase4.collection.priorityQueueExample.TaskQueue;
 
 import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -1087,6 +1090,36 @@ public class Main {
             System.out.println(student);
         }
          */
+
+        //queue example
+        /*
+        Descend descend = new Descend();
+        PriorityQueue<String> pq = new PriorityQueue<>(descend);
+        pq.offer("USA");
+        pq.offer("India");
+        pq.offer("England");
+        pq.offer("Germany");
+        System.out.println(pq);
+        System.out.println(pq.peek());
+        System.out.println(pq.remove());
+        System.out.println(pq);
+         */
+
+        //putting priority in priorityQueue
+        /*
+        TaskPriority tp = new TaskPriority();
+        PriorityQueue<TaskQueue> pq = new PriorityQueue<>(tp);
+        pq.add(new TaskQueue("Cleaning room", 1));
+        pq.add(new TaskQueue("Throwing Trash", 3));
+        pq.add(new TaskQueue("Washing clothes", 4));
+        pq.add(new TaskQueue("Cooking dinner", 5));
+        pq.add(new TaskQueue("Cleaning Garden", 2));
+//        while (!pq.isEmpty()) {
+//            System.out.println(pq.poll());
+//        }
+        for (TaskQueue t : pq) {
+            System.out.println(t);
+        }
 
 
 
