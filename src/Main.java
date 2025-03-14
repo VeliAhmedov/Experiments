@@ -3,6 +3,11 @@
 
 import Phase4.CustomException;
 import Phase4.collection.enumMap.EnumMapEx;
+import Phase4.generics.BoundedTypeGeneric;
+import Phase4.generics.GenericMethods;
+import Phase4.generics.MultipleTypeGeneric;
+import Phase4.generics.TestGenericClass;
+import Phase4.generics.interfaceGeneric.GenericClassThatImp;
 
 import java.beans.Introspector;
 import java.io.FileReader;
@@ -1145,6 +1150,72 @@ public class Main {
         System.out.println(p.getProperty("username"));
         System.out.println(p.getProperty("password"));
          */
+
+        //generic test
+        /*
+        Integer i = 11;
+        String text = "Hello World";
+        Boolean answer = true;
+        Double [] numbers = {1.1,3.2,43.2};
+        TestGenericClass<Integer> tgc1 = new TestGenericClass<>(i);
+        TestGenericClass<String> tgc2 = new TestGenericClass<>(text);
+        TestGenericClass<Boolean> tgc3 = new TestGenericClass<>(answer);
+        TestGenericClass<Double> tgc4 = new TestGenericClass<>(numbers[0]);
+        System.out.println(tgc1);
+        System.out.println(tgc2);
+        System.out.println(tgc3);
+        System.out.println(tgc4);
+         */
+
+        //Multiple type generic class
+        /*
+        Integer number = 12;
+        String text = "Hello World";
+        MultipleTypeGeneric<Integer, String> mtg = new MultipleTypeGeneric<>(number, text);
+        System.out.println(mtg); //key=12, value=Hello World
+        System.out.println(mtg.getKey()+ " : "+mtg.getValue()); //12 : Hello World
+         */
+
+        //Bounded Type generics
+        /*
+        Double number1 = 1.3;
+        Long number2 = 2L;
+        Integer number3 = 3;
+        BoundedTypeGeneric<Integer> btg1 = new BoundedTypeGeneric<>(number3);
+        BoundedTypeGeneric<Long> btg2 = new BoundedTypeGeneric<>(number2);
+        BoundedTypeGeneric<Double> btg3 = new BoundedTypeGeneric<>(number1);
+//        BoundedTypeGeneric<String> btg4 = new BoundedTypeGeneric<String>(); isn't possible because type only accepts number
+        System.out.println(btg1); //value= 3
+        System.out.println(btg2); //value= 2
+        System.out.println(btg3); //value= 1.3
+         */
+        //generic method
+        /*
+        String [] texts = {"Hello", "World", "Java"};
+        Integer [] numbers = {1,2,3,4};
+        GenericMethods.printArray(texts); //Hello World Java
+        GenericMethods.printArray(numbers); //1 2 3 4
+        Integer number1 = 1;
+        Double number2 = 2.2;
+        System.out.println(GenericMethods.add(number1, number2)); //3.2
+        Integer number3 = 3;
+        String text = "Hello World";
+        GenericMethods.printPair(number3, text); //First: 3, Second: Hello World
+         */
+
+        //interface generic
+        /*
+        GenericClassThatImp<String> gcti1 = new GenericClassThatImp<>();
+        gcti1.m1("Hello"); //M1 test / T value is Hello
+        GenericClassThatImp<Integer> gcti2 = new GenericClassThatImp<>();
+        gcti2.m1(12); //M1 test / T value is 12
+         */
+
+
+
+
+
+
 
 
     }
