@@ -2,25 +2,12 @@
 
 
 import Phase4.CustomException;
-import Phase4.collection.HashSetExample;
-import Phase4.collection.comparatorExample.Ascend;
-import Phase4.collection.comparatorExample.Descend;
-import Phase4.collection.comparatorExample.StudentComparator;
-import Phase4.collection.comparatorExample.StudentDescend;
-import Phase4.collection.compareToExample.StudentCompareTo;
-import Phase4.collection.example2.DepartmentCollection;
-import Phase4.collection.example2.EmployeeCollection;
-import Phase4.collection.example3.EmpCol;
-import Phase4.collection.example3.ManagerCol;
-import Phase4.collection.priorityQueueExample.TaskPriority;
-import Phase4.collection.priorityQueueExample.TaskQueue;
+import Phase4.collection.enumMap.EnumMapEx;
 
-import java.awt.*;
+import java.beans.Introspector;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 
@@ -1120,13 +1107,48 @@ public class Main {
         for (TaskQueue t : pq) {
             System.out.println(t);
         }
+         */
+        //map getting keys and values
+        /*
+        HashMap<Integer, String> hm = new HashMap<>();
+        hm.put(1,"Hello");
+        hm.put(3,"World");
+        hm.put(2,"Hello");
+        Set<Integer> keys = hm.keySet();
+        Collection<String> values = hm.values();
+        System.out.println(keys); //[1, 2, 3]
+        System.out.println(values); //[Hello, Hello, World]
+         */
+        //Iterating map values by key and values via enhanced for
+        /*
+        HashMap<Integer, String> words = new HashMap<>();
+        words.put(0,"Hello");
+        words.put(1,"World");
+        words.put(2,"Java");
+        words.put(3,"Python");
+        for(Integer keys : words.keySet()){
+            System.out.println(keys + " " + words.get(keys));
+        }
+        for (String values : words.values()) {
+            System.out.println(values);
+        }
+        for (Map.Entry<Integer, String> entry : words.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+         */
 
+        //properties collection framework example
+        /*
+        FileReader reader=new FileReader("db.properties");
+        Properties p=new Properties();
+        p.load(reader);
+        System.out.println(p.getProperty("username"));
+        System.out.println(p.getProperty("password"));
+         */
 
 
     }
 }
-
-
 
 
 //when constructor is private, you can't extend and can't make instance of it outside
